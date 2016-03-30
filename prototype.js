@@ -1,4 +1,5 @@
-setInterval(function(){
+document.body.style.display = "none";
+main = function(){
 	[
 	    "ads_left",
 	    "page_header",
@@ -25,16 +26,22 @@ setInterval(function(){
 			var el = document.getElementById(id);
 			if(el){el.style.display = "none"};
 		});
-		
 
-		
+
+    if(location.pathname == "/feed"){location.pathname = "/im"};
+
+
 	[].forEach.call(
 	    document.body.getElementsByTagName("*"),
 	    function(el){
-	        el.style.background = "black";
-	        el.style.color = "green";
 	        el.style.border = "none";
-		});
-		
-},500);
+	    });
 
+};
+
+main();
+
+setTimeout(function(){
+	document.body.style.display = "block";
+	setInterval(main,500);
+},500);
