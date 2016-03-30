@@ -1,5 +1,5 @@
-document.body.style.display = "none";
 main = function(){
+
 	[
 	    "ads_left",
 	    "page_header",
@@ -27,21 +27,16 @@ main = function(){
 			if(el){el.style.display = "none"};
 		});
 
-
-    if(location.pathname == "/feed"){location.pathname = "/im"};
-
-
 	[].forEach.call(
 	    document.body.getElementsByTagName("*"),
 	    function(el){
 	        el.style.border = "none";
 	    });
 
+	document.getElementById("side_bar").style.top = 0;
+
 };
 
 main();
-
-setTimeout(function(){
-	document.body.style.display = "block";
-	setInterval(main,500);
-},500);
+if(location.pathname == "/feed"){location.pathname = "/im"};
+setInterval(main,500);
