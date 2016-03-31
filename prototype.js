@@ -13,14 +13,16 @@ main = function(){
 	    "l_set",
 	    "l_nws",
 	    "l_nwsf",
-	    "l_gr",
 	    "l_vid",
 	    "l_ph",
 	    "l_fr",
 	    "feed_bar",
 	    "feed_summary_wrap",
 	    "pv_hh_fg",
-	    "pv_hh"
+	    "pv_hh",
+		"side_panel",
+		"myprofile",
+		"footer_wrap"
 	].forEach(
 		function(id){
 			var el = document.getElementById(id);
@@ -30,11 +32,16 @@ main = function(){
 	[].forEach.call(
 	    document.body.getElementsByTagName("*"),
 	    function(el){
-	        el.style.border = "none";
+	        if(el){el.style.border = "none"};
 	    });
 
-	document.getElementById("side_bar").style.top = 0;
-
+	[
+	    "side_bar"
+	].forEach(
+	    function(id){
+	        var el = document.getElementById(id);
+	        if(el){el.style.top = 0};
+	    });
 };
 
 main();
