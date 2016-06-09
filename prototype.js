@@ -22,7 +22,8 @@ main = function(){
 	    "pv_hh",
 		"side_panel",
 		"myprofile",
-		"footer_wrap"
+		"footer_wrap",
+		"myprofile_table"
 	].forEach(
 		function(id){
 			var el = document.getElementById(id);
@@ -44,6 +45,8 @@ main = function(){
 	    });
 };
 
+console.log("vkmin runs")
 main();
 if(location.pathname == "/feed"){location.pathname = "/im"};
 setInterval(main,500);
+console.log("vkmin started OK")
